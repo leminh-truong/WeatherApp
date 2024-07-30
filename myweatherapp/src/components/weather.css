@@ -1,0 +1,15 @@
+.search-bar{
+    padding-left: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+}
+
+.cards{
+    padding-left: 7px;
+    width: 100%;
+}
+
+.gauge{
+    display: flex;
+    justify-content: space-between;
+}
