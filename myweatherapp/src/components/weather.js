@@ -7,8 +7,7 @@ function Weather() {
     const [flag, setFlag] = useState(true)
 
     const fetchData = async() => {
-        const API_KEY = "90aabc2cdd804fdc96d90911242407";
-        const resp = await fetch("https://api.weatherapi.com/v1/current.json?key=" + API_KEY + "&q=" + city + "&aqi=no");
+        const resp = await fetch("https://api.weatherapi.com/v1/current.json?key=" + process.env.REACT_APP_API_KEY + "&q=" + city + "&aqi=no");
         
         if(resp.status !== 200){
             console.log("Cannot fetch data")
@@ -42,7 +41,8 @@ function Weather() {
                     <h2>{data.location.name}</h2>
                     <p>{data.current.condition.text}</p>
                     <img alt="weather" src={data.current.condition.icon}></img>
-                    <p>Temperature: {data.current.temp_c}</p>
+                    <p>Temperature (C): {data.current.temp_c} C</p>
+                    <p>Temperature (F): {data.current.temp_f} F</p>
                 </div>
             )}
             {!flag && (
