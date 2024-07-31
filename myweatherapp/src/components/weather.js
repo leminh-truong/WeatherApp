@@ -48,6 +48,12 @@ function Weather() {
                     variant="outlined"
                     placeholder="Search..."
                     size="small"
+                    sx={{
+                        input: {
+                            label: {color: "blue"},
+                            background: "white"
+                        }
+                      }}
                 />
                 <IconButton type="submit" aria-label="search">
                     <SearchIcon style={{ fill: "blue" }} />
